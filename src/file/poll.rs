@@ -6,7 +6,7 @@
 use super::*;
 use alloc::boxed::Box;
 use alloc::vec::Vec;
-use bitvec::prelude::{BitVec, Lsb0};
+use bitvec::prelude::{BitVec, Lsb0, BitSlice};
 use core::future::Future;
 use core::pin::Pin;
 use core::task::{Context, Poll};
@@ -326,7 +326,7 @@ impl FdSet {
                 return Err(LxError::EINVAL);
             }
             // save the fdset, and clear it
-            let origin = BitVec::from_slice(addr.as_slice(len)?).unwrap();
+            let origin = BitVec::from_bitslice(BitSlice::from_slice(addr.as_slice(len)?).unwrap());
             let mut vec0 = Vec::<u32>::new();
             vec0.resize(len, 0);
             addr.write_array(&vec0)?;
