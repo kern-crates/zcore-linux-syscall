@@ -1,0 +1,15 @@
+{
+  "name": "zcore-linux-syscall",
+  "description": "Linux syscalls implementation",
+  "authors": [{
+    "name": "Runji Wang",
+    "email": "wangrunji0408@163.com"
+  }, {
+    "name": "Luoyuan Xiao",
+    "email": "xiaoluoyuan@163.com"
+  }],
+  "keywords": ["zcore", "zircon", "syscall"],
+  "repo": "kern-crates/zcore-linux-syscall",
+  "test_repos": ["https://github.com/kern-crates/zCore.git"],
+  "doc_url": "https://github.com/kern-crates/zCore/blob/main/README.md"
+}
